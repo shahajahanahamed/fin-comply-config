@@ -3,6 +3,16 @@ server:
 
 spring:
      datasource:
-          url: jdbc:postgresql://user-db-qa:5432/userdb_qa
-          username: qauser
-          password: qapass
+          driver-class-name: org.postgresql.Driver
+          url: jdbc:postgresql://user-db-server:5432/userqadb
+          username: admin
+          password: secret
+
+user-service:
+     message: "Welcome to FinComply User-Service related QA Environment APIs "
+     contactDetails:
+          name: "QA Support"
+          email: "qa-support@fincomply.com"
+     onCallSupport:
+          - "+91 9832973455"
+          - "+91 9875319606"

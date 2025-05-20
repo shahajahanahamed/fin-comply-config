@@ -4,7 +4,7 @@ server:
 spring:
      datasource:
           driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://user-db:5432/userdb
+          url: jdbc:postgresql://user-db-server:5432/userdevdb
           username: admin
           password: secret
      jpa:
@@ -18,7 +18,7 @@ build:
      version: "1.0"
 
 user-service:
-     message: "Welcome to FinComply User-Service related docker APIs "
+     message: "Welcome to FinComply User-Service related Dev Environment APIs "
      contactDetails:
           name: "Shahajahan Ahamed- Developer"
           email: "ahamedshahajahan@gmail.com"
