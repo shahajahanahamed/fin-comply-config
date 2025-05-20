@@ -14,3 +14,14 @@ spring:
           properties:
                hibernate:
                     format_sql: true
+build:
+     version: "1.0"
+
+user-service:
+     message: "Welcome to FinComply User-Service related docker APIs "
+     contactDetails:
+          name: "Shahajahan Ahamed- Developer"
+          email: "ahamedshahajahan@gmail.com"
+     onCallSupport:
+          - +91 9832973455
+          - +91 9875319606
