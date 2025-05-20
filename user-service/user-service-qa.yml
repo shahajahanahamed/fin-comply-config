@@ -1,0 +1,8 @@
+server:
+     port: 9002
+
+spring:
+     datasource:
+          url: jdbc:postgresql://user-db-qa:5432/userdb_qa
+          username: qauser
+          password: qapass

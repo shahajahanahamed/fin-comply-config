@@ -1,0 +1,8 @@
+server:
+     port: 9003
+
+spring:
+     datasource:
+          url: jdbc:postgresql://user-db-prod:5432/userdb_prod
+          username: produser
+          password: prodpass
