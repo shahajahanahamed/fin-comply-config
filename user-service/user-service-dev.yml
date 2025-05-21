@@ -4,7 +4,7 @@ server:
 spring:
      datasource:
           driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://user-db-server:5432/userdevdb
+          url: jdbc:postgresql://localhost:5432/userdevdb
           username: admin
           password: secret
      jpa:
