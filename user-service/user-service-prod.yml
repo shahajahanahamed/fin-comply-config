@@ -1,12 +1,26 @@
 server:
-     port: 9003
+     port: 9002
 
 spring:
      datasource:
           driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://localhost:5432/userproddb
+          url: jdbc:postgresql://localhost:5432/userdbprod
           username: admin
           password: secret
+     jpa:
+         hibernate:
+              ddl-auto: none # No schema changes in prod
+     flyway:
+         enabled: true
+         locations: classpath:db/migration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
 
 user-service:
      message: "Welcome to FinComply User-Service related Production Environment APIs "
