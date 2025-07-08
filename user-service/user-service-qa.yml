@@ -1,18 +1,16 @@
 server:
-     port: 9002
-
+  port: 9001
 spring:
-     datasource:
-          driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://localhost:5432/userqadb
-          username: admin
-          password: secret
-
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/userdbqa
+    username: admin
+    password: secret
 user-service:
-     message: "Welcome to FinComply User-Service related QA Environment APIs "
-     contactDetails:
-          name: "QA Support"
-          email: "qa-support@fincomply.com"
-     onCallSupport:
-          - "+91 9832973455"
-          - "+91 9875319606"
+  message: "Welcome to FinComply User-Service related QA Environment APIs "
+  contactDetails:
+    name: "QA Support"
+    email: "qa-support@fincomply.com"
+  onCallSupport:
+    - "+91 9832973455"
+    - "+91 9875319606"
