@@ -1,3 +1,6 @@
 spring:
-     application:
-          name: user-service
+  application:
+    name: user-service
+logging:
+  level:
+    com.fincomply: INFO
