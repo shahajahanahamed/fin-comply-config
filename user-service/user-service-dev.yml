@@ -16,6 +16,7 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+    database-type: POSTGRESQL
 build:
   version: "1.0"
 user-service:
