@@ -1,7 +1,7 @@
 server:
   port: 9001
 spring:
-  datasource:https://github.com/shahajahanahamed/fin-comply-config/blob/master/user-service/user-service-qa.yml#L8C20
+  datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/userdbqa
     username: admin
