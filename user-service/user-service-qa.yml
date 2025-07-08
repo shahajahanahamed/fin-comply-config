@@ -16,7 +16,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics,refresh
+  endpoint:
+    refresh:
+      enabled: true
 user-service:
   message: "Welcome to FinComply User-Service related QA Environment APIs "
   contactDetails:

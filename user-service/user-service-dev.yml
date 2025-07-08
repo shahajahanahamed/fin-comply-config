@@ -17,11 +17,14 @@ spring:
     enabled: true
     locations: classpath:db/migration
 
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    refresh:
+      enabled: true
 build:
   version: "1.0"
 user-service:
