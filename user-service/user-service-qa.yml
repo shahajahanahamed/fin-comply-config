@@ -2,24 +2,12 @@ server:
   port: 9001
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/userdbqa
     username: admin
     password: secret
   jpa:
     hibernate:
       ddl-auto: validate
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,refresh
-  endpoint:
-    refresh:
-      enabled: true
 user-service:
   message: "Welcome to FinComply User-Service related QA Environment APIs "
   contactDetails:
