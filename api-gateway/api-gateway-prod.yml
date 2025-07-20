@@ -1,15 +1,5 @@
 server:
      port: 8080
-spring:
-     cloud:
-          gateway:
-               routes:
-                    -    id: user-service
-                         uri: lb://user-service
-                         predicates:
-                              - Path=/api/users/**
-                         filters:
-                              - StripPrefix=1
 management:
      endpoints:
           web:
