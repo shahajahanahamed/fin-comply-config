@@ -1,0 +1,18 @@
+server:
+     port: 9000
+spring:
+     datasource:
+          url: jdbc:postgresql://localhost:5432/orgdbdev
+          username: admin
+          password: secret
+     jpa:
+          hibernate:
+               ddl-auto: update #validate for dev/qa to ensure schema alignment, none for prod to prevent changes
+organization-service:
+     message: "Welcome to FinComply Organization-Service related Dev Environment APIs "
+     contactDetails:
+          name: "Shahajahan Ahamed- Developer"
+          email: "ahamedshahajahan@gmail.com"
+     onCallSupport:
+          - +91 9832973455
+          - +91 9875319606
