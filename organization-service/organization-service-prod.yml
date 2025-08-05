@@ -5,19 +5,26 @@ spring:
           url: jdbc:postgresql://localhost:5432/orgdbprod
           username: admin
           password: secret
+          driver-class-name: org.postgresql.Driver
      jpa:
           hibernate:
-               ddl-auto: update #validate for dev/qa to ensure schema alignment, none for prod to prevent changes
-management:
-     endpoints:
-          web:
-               exposure:
-                    include: health,info,metrics,refresh,prometheus
+               ddl-auto: none
+          show-sql: false
+          properties:
+               hibernate:
+                    dialect: org.hibernate.dialect.PostgreSQLDialect
+                    format_sql: false
+          open-in-view: false
 organization-service:
-     message: "Welcome to FinComply Organization-Service related Production Environment APIs "
+     message: "Welcome to FinComply Organization-Service related Production Environment APIs"
      contactDetails:
           name: "Production Support"
           email: "prod-support@fincomply.com"
      onCallSupport:
           - "+91 9222222222"
           - "+91 9333333333"
+management:
+     endpoints:
+          web:
+               exposure:
+                    include: health,info,metrics,refresh,prometheus

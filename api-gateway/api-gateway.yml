@@ -14,6 +14,12 @@ spring:
                               - Path=/api/v1/roles/**
                          filters:
                               - StripPrefix=0
+                    -    id: organization-service
+                         uri: lb://organization-service
+                         predicates:
+                              - Path=/api/v1/organizations/**
+                         filters:
+                              - StripPrefix=0
 management:
      endpoints:
           web:
