@@ -24,7 +24,10 @@ management:
      endpoints:
           web:
                exposure:
-                    include: health,info,gateway,refresh,prometheus
+                    include: health,info,gateway,refresh,metrics,prometheus
+     endpoint:
+          refresh:
+               enabled: true
 logging:
      level:
           org.springframework.cloud.gateway: INFO
