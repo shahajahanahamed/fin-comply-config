@@ -21,10 +21,50 @@ eureka:
           fetch-registry: true
      instance:
           prefer-ip-address: true
+
+resilience4j:
+     circuitbreaker:
+          instances:
+               organization-service:
+                    slidingWindowSize: 10
+                    failureRateThreshold: 50
+                    waitDurationInOpenState: 10s
+                    permittedNumberOfCallsInHalfOpenState: 3
+                    registerHealthIndicator: true
+     retry:
+          instances:
+               organization-service:
+                    maxAttempts: 3
+                    waitDuration: 1s
+                    retryExeptions:
+                         - feign.FeignException$InternalServerError
+                         - feign.FeignException$ServiceUnavailable
+                         - feign.FeignException$GatewayTimeout
+     bulkhead:
+          instances:
+               organization-service:
+                    maxConcurrentCalls: 10
+                    maxWaitDuration: 1s
+     timelimiter:
+          instances:
+               organization-service:
+                    timeoutDuration: 2s
+                    cancelRunningFuture: true
+feign:
+     client:
+          config:
+               organization-service:
+                    connectTimeout: 10000
+                    readTimeout: 10000
 management:
      endpoints:
-          exposure:
-               include: health,info,metrics,refresh
+          web:
+               exposure:
+                    include: health,info,metrics,refresh,prometheus
+     metrics:
+          export:
+               prometheus:
+                    enabled: true
      endpoint:
           refresh:
                enabled: true
