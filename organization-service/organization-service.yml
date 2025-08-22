@@ -64,6 +64,8 @@ management:
      endpoint:
           refresh:
                enabled: true
+          prometheus:
+               enabled: true
 logging:
      level:
           org.springframework.cloud.gateway: INFO

@@ -66,6 +66,8 @@ management:
      endpoint:
           refresh:
                enabled: true
+          prometheus:
+               enabled: true
 logging:
      level:
           com.fincomply: INFO
