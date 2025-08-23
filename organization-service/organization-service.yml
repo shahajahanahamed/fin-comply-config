@@ -66,10 +66,17 @@ management:
                enabled: true
           prometheus:
                enabled: true
+     tracing:
+          enabled: true
+          sampling:
+               probability: 1
 logging:
      level:
+          root: INFO
           org.springframework.cloud.gateway: INFO
           com.fincomply: INFO
+     pattern:
+          console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%traceId/%spanId] %-5level %logger{36} - %msg%n"
 build:
      version: "1.0"
 
