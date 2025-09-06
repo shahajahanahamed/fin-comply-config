@@ -5,7 +5,7 @@ spring:
           driver-class-name: org.postgresql.Driver
      jpa:
           hibernate:
-               ddl-auto: validate #for dev/qa to ensure schema alignment, none for prod to prevent changes
+               ddl-auto: validate
           show-sql: true
           properties:
                hibernate:
@@ -13,16 +13,6 @@ spring:
      flyway:
           enabled: true
           locations: classpath:db/migration
-     kafka:
-          bootstrap-servers: localhost:5000
-          producer:
-               key-serializer: org.apache.kafka.common.serialization.StringSerializer
-               value-serializer: org.apache.kafka.common.serialization.StringSerializer
-          admin:
-               auto-create: true
-app:
-     topics:
-          organization-events: organization-events
 eureka:
      client:
           serviceUrl:
@@ -31,7 +21,6 @@ eureka:
           fetch-registry: true
      instance:
           prefer-ip-address: true
-
 resilience4j:
      circuitbreaker:
           instances:
@@ -46,7 +35,7 @@ resilience4j:
                organization-service:
                     maxAttempts: 3
                     waitDuration: 1s
-                    retryExeptions:
+                    retryExceptions:
                          - feign.FeignException$InternalServerError
                          - feign.FeignException$ServiceUnavailable
                          - feign.FeignException$GatewayTimeout
@@ -85,10 +74,10 @@ logging:
           root: INFO
           org.springframework.cloud.gateway: INFO
           com.fincomply: INFO
+          org.apache.kafka: DEBUG  # Keep for debugging
      pattern:
           console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%traceId/%spanId] %-5level %logger{36} - %msg%n"
 build:
      version: "1.0"
-
 user-service:
      base-url: http://user-service/api/v1

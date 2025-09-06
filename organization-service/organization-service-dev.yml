@@ -15,6 +15,16 @@ spring:
                     dialect: org.hibernate.dialect.PostgreSQLDialect
                     format_sql: true
           open-in-view: false
+     kafka:
+          bootstrap-servers: localhost:5000  # Changed to host-mapped port
+          producer:
+               key-serializer: org.apache.kafka.common.serialization.StringSerializer
+               value-serializer: org.apache.kafka.common.serialization.StringSerializer
+          admin:
+               auto-create: true  # Enable for dev
+app:
+     topics:
+          organization-events: organization-events
 organization-service:
      message: "Welcome to FinComply Organization-Service related Dev Environment APIs"
      contactDetails:
