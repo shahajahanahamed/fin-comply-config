@@ -13,6 +13,16 @@ spring:
      flyway:
           enabled: true
           locations: classpath:db/migration
+     kafka:
+          bootstrap-servers: localhost:5000
+          producer:
+               key-serializer: org.apache.kafka.common.serialization.StringSerializer
+               value-serializer: org.apache.kafka.common.serialization.StringSerializer
+          admin:
+               auto-create: true
+app:
+     topics:
+          organization-events: organization-events
 eureka:
      client:
           serviceUrl:
