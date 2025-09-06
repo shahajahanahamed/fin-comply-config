@@ -16,7 +16,7 @@ spring:
                     format_sql: true
           open-in-view: false
      kafka:
-          bootstrap-servers: localhost:5000  # Changed to host-mapped port
+          bootstrap-servers: localhost:9092
           producer:
                key-serializer: org.apache.kafka.common.serialization.StringSerializer
                value-serializer: org.apache.kafka.common.serialization.StringSerializer
