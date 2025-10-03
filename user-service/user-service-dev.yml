@@ -2,9 +2,9 @@ server:
   port: 9010
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/userdbdev
+    url: jdbc:mysql://localhost:3306/userdbdev
     username: admin
-    password: secret
+    password: admin
   jpa:
     hibernate:
       ddl-auto: validate
