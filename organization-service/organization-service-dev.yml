@@ -2,17 +2,16 @@ server:
      port: 9000
 spring:
      datasource:
-          url: jdbc:postgresql://localhost:5433/orgdbdev
+          url: jdbc:mysql://localhost:3306/orgdbdev
           username: admin
-          password: secret
-          driver-class-name: org.postgresql.Driver
+          password: admin
+          driver-class-name: com.mysql.cj.jdbc.Driver
      jpa:
           hibernate:
                ddl-auto: update
           show-sql: true
           properties:
                hibernate:
-                    dialect: org.hibernate.dialect.PostgreSQLDialect
                     format_sql: true
           open-in-view: false
 
