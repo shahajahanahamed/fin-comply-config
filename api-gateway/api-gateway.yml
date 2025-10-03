@@ -20,6 +20,12 @@ spring:
                               - Path=/api/v1/organizations/**
                          filters:
                               - StripPrefix=0
+                    -    id: vendor-service
+                         uri: lb://vendor-service
+                         predicates:
+                              - Path=/api/v1/vendors/**
+                         filters:
+                              - StripPrefix=0
 management:
      endpoints:
           web:
