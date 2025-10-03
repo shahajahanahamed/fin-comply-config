@@ -2,7 +2,7 @@ spring:
      application:
           name: user-service
      datasource:
-          driver-class-name: org.postgresql.Driver
+          driver-class-name: com.mysql.cj.jdbc.Driver
      jpa:
           hibernate:
           ddl-auto: validate #for dev/qa to ensure schema alignment, none for prod to prevent changes
